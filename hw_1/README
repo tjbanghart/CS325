@@ -1,0 +1,46 @@
+HW 1 - Problem 4: Insertion Sort and Merge Sort:
+    These programs sort an input of integers by reading lines of integers from "data.txt" and write the 
+    sorted arrays to "insert.out" and "merge.out". 
+
+Input and Preconditions:
+    "data.txt" must be comprised of integers delimiated by any amount of whitespace. 
+    The first integer on each line is the number of integers to be sorted and is not part of the sorted output
+
+    For example, the input:
+    4 19 2 5 11  
+    8 1 2 3 4 5 6 1 2 
+
+    Would have an output of:
+    19 11 5 2
+    6 5 4 3 2 2 1 1
+
+    Additionally, "data.txt" must exist in the same directory as this README. The programs will not run if "data.txt" does not exist. 
+
+To Run:
+    First, ensure that "data.txt" exists in the same directory as this README file!
+
+    To run the insertion sort program:
+    Run: ```python3 insertionsort.py```
+    This will create an output file "insert.out"
+
+
+    To run the merge sort program:
+    Run: ```python3 mergesort.py```
+    This will create an output file "merge.out"
+------------------------------------------------------------------------------------------
+
+HW 1 - Problem 5: insertTime and mergeTime:
+    These programs sort arrays of randomly generated integers (0 - 10000) of increasing length (n)
+    Once sorted, they output the number of elements sorted and the runtime of the algorithm to stdout.
+
+    These programs were created to compare the runtimes of insertion sort and merge sort with increasing 'n'.
+
+To Run:
+    To run the insertTime program:
+    Run: ```python3 insertTime.py```
+
+
+    To run the mergeTime program:
+    Run: ```python3 mergeTime.py```
+
+
