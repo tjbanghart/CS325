@@ -1,0 +1,28 @@
+HW 2 - Problem 5a: Stooge Sort:
+    This program sorts an input of integers by reading lines of integers from "data.txt" and writes the 
+    sorted arrays to "stooge.out". 
+
+Input and Preconditions:
+    "data.txt" must be comprised of integers delimiated by any amount of whitespace. 
+    The first integer on each line is the number of integers to be sorted and is not part of the sorted output
+
+    For example, the input:
+    4 19 2 5 11  
+    8 1 2 3 4 5 6 1 2 
+
+    Would have an output of:
+    19 11 5 2
+    6 5 4 3 2 2 1 1
+
+    Additionally, "data.txt" must exist in the same directory as this README. The programs will not run if "data.txt" does not exist. 
+
+To Run:
+    First, ensure that "data.txt" exists in the same directory as this README file!
+
+    To run the stooge sort program:
+    Run: ```python3 stoogesort.py```
+    This will create an output file "insert.out"
+
+------------------------------------------------------------------------------------------
+
+
