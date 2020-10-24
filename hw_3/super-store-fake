@@ -1,0 +1,46 @@
+SuperStoreSpree(F, N, M[], P[], W[])
+    # Initalize a total to sum maximum haul
+    total = 0
+
+    # Iterate through each family memeber
+    for i = 0 to F.Length
+        # SuperStoreDP returns optimal value and array of items for a family memeber
+        val, C[i] = SuperStoreDP(N, M[i], P[], W[])
+        total += val
+
+    print(total)
+    for i = 0 to F.Length
+    print(i, C[i])
+
+SuperStoreDP(N, M, P[], W[])
+    # Table with each item as row, and weight person can carry as col
+    V[N+1][M+1]
+    # Additonal table to keep track of item indices because we care more about what items are optimal than their price.
+    I[N+1][M+1]
+
+    # Populate the table with optimal choices for each weight capacity
+    for i = 0 to N
+        for j = 0 to M
+
+            # Initalize the base state of each row and col
+            if i == 0 or j == 0
+                V[i][j] = 0
+                I[i][j] = []
+
+            # Else if we are not at the tables edges, lets see if the person can carry a new item
+            else if W[i-1] <= j
+                # The current cell is the max of either:
+                # Price of the item + the previous optimal choice for the remaining weight 
+                # OR it is simply the same as before the new item was introduced (bring down prev row)
+                if P[i-1] + V[i - 1][j - W[i - 1]] > V[i - 1][j]
+                    V[i][j] = P[i - 1] + V[i - 1][j - W[i - 1]]
+                    I[i][j] = [(i - 1)] + I[i - 1][j - W[i - 1]]
+                else 
+                    V[i][j] = V[i - 1][j]
+                    I[i][j] = I[i - 1][j]
+
+            # Else if the person can no longer carry any more items we populate with the last optimal choice
+            else
+                V[i][j] = V[i-1][j]
+    
+    return V[I][M], I[N][M]
